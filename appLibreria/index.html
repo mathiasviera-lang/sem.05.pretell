@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librería App | Catálogo de Libros</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <span class="logo-icon">📚</span>
+        <div>
+          <h1 class="logo-title">Librería App</h1>
+          <p class="logo-subtitle">Explora nuestra colección de libros disponibles</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <form id="form-busqueda" class="search-form" role="search">
+          <input 
+            type="text" 
+            id="input-busqueda" 
+            class="search-input" 
+            placeholder="Buscar tema (ej: javascript, python)..." 
+            value="javascript"
+            aria-label="Buscar libros por tema"
+          >
+          <button type="submit" class="btn-search" title="Buscar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </form>
+        <button id="btn-recargar" class="btn-refresh" title="Recargar catálogo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+          <span>Actualizar</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="main-content">
+    
+    <!-- Mensajes de estado (Cargando, Errores o Catálogo vacío) -->
+    <section id="status-container" class="status-container" aria-live="polite">
+      <!-- Inyectado dinámicamente desde app.js -->
+    </section>
+
+    <!-- Grid donde se insertan las tarjetas dinámicas -->
+    <section id="libros-grid" class="libros-grid" aria-label="Listado de libros">
+      <!-- Tarjetas generadas con JavaScript -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Librería App &bull; Conectado a la API local</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
