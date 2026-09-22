@@ -116,7 +116,7 @@ app.get('/api/libros', async (req, res) => {
 // ================================================================
 // INICIALIZACIÓN DEL SERVIDOR
 // ================================================================
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`====================================================`);
   console.log(`🚀 Servidor Backend corriendo en: http://localhost:${PORT}`);
   console.log(`📚 Endpoint de libros: http://localhost:${PORT}/api/libros`);

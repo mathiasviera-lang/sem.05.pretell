@@ -8,6 +8,7 @@
 
 // 1. Configuración y Constantes
 const API_URL = 'http://localhost:3000/api/libros';
+const API_FALLBACK_URL = 'http://127.0.0.1:3000/api/libros';
 
 // 2. Elementos del DOM
 const librosGrid = document.getElementById('libros-grid');
@@ -167,7 +168,17 @@ async function obtenerLibros(query = null) {
       url.searchParams.set('q', termino);
     }
 
-    const respuesta = await fetch(url.toString());
+    let respuesta;
+    try {
+      respuesta = await fetch(url.toString());
+    } catch (errLocalhost) {
+      console.warn('Fallo al conectar con localhost, reintentando con 127.0.0.1:', errLocalhost);
+      const fallbackUrl = new URL(API_FALLBACK_URL);
+      if (termino) {
+        fallbackUrl.searchParams.set('q', termino);
+      }
+      respuesta = await fetch(fallbackUrl.toString());
+    }
 
     // Valida código de respuesta HTTP (200-299)
     if (!respuesta.ok) {
