@@ -1,13 +1,10 @@
-/* ===================================================
-   VARIABLES GLOBALES Y RESET
-   =================================================== */
 :root {
-  --primary: #4f46e5;         /* Índigo moderno */
+  --primary: #4f46e5;        
   --primary-hover: #4338ca;
   --primary-light: #e0e7ff;
-  --bg-color: #f8fafc;        /* Fondo gris claro limpio */
+  --bg-color: #f8fafc;        
   --card-bg: #ffffff;
-  --text-main: #0f172a;       /* Slate oscuro */
+  --text-main: #0f172a;      
   --text-muted: #64748b;
   --border-color: #e2e8f0;
   --error-bg: #fef2f2;
